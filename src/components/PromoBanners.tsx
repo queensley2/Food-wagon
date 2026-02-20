@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 interface PromoCard {
   id: number;
@@ -21,7 +22,7 @@ export default function PromoBanners() {
       description:
         "Enjoy the finest gourmet experience with our exclusive sandwiches. Crafted with the freshest ingredients.",
       buttonText: "Order Now",
-      image: "🥪",
+      image: "/sandwish2.png",
       layout: "left",
     },
     {
@@ -31,7 +32,7 @@ export default function PromoBanners() {
       description:
         "Indulge in our deliciously crispy fried chicken, perfect for any celebration. Order in bulk and get special discounts!",
       buttonText: "Order Now",
-      image: "🍗",
+      image: "/chicken.png",
       layout: "right",
     },
     {
@@ -41,7 +42,7 @@ export default function PromoBanners() {
       description:
         "Our mouth-watering spicy pizza will leave you craving for more. Made with fresh ingredients and special spices.",
       buttonText: "Order Now",
-      image: "🍕",
+      image: "/food.png",
       layout: "left-full",
     },
   ];
@@ -68,14 +69,24 @@ export default function PromoBanners() {
               </button>
             </div>
             <div className="flex justify-center text-8xl bg-gradient-to-br from-green-100 to-yellow-100 rounded-lg p-8 h-48">
-              🥪
+              <Image
+                src="/sandwish2.png"
+                alt="Sandwich"
+                width={128}
+                height={128}
+              />
             </div>
           </div>
 
           {/* Middle Promo - Fried Chicken */}
           <div className="grid grid-cols-2 gap-8 items-center bg-white">
             <div className="flex justify-center text-8xl bg-gradient-to-br from-yellow-100 to-red-100 rounded-lg p-8 h-48">
-              🍗
+              <Image
+                src="/chicken.png"
+                alt="Chicken"
+                width={128}
+                height={128}
+              />
             </div>
             <div className="pl-8 border-l-4 border-dotted border-blue-300">
               <h2 className="text-2xl font-bold mb-2">
@@ -108,7 +119,12 @@ export default function PromoBanners() {
               </button>
             </div>
             <div className="flex justify-center text-8xl bg-gradient-to-br from-red-100 to-orange-100 rounded-lg p-8 h-48">
-              🍕
+              <Image
+                src="/food.png"
+                alt="Pizza"
+                width={128}
+                height={128}
+              />
             </div>
           </div>
         </div>

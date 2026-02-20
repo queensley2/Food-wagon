@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-
+import Image from "next/image";
 interface FoodCategory {
   id: number;
   name: string;
@@ -12,12 +12,12 @@ export default function SearchByFood() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const foodCategories: FoodCategory[] = [
-    { id: 1, name: "Pizza", emoji: "🍕" },
-    { id: 2, name: "Burger", emoji: "🍔" },
-    { id: 3, name: "Noodles", emoji: "🍜" },
-    { id: 4, name: "Sub-sandwich", emoji: "🥪" },
-    { id: 5, name: "Chowmein", emoji: "🍜" },
-    { id: 6, name: "Steak", emoji: "🥩" },
+    { id: 1, name: "Pizza", emoji: "/food.png" },
+    { id: 2, name: "Burger", emoji: "/food 1.png" },
+    { id: 3, name: "Noodles", emoji: "/food 2.png" },
+    { id: 4, name: "Sub-sandwich", emoji: "/food 3.png" },
+    { id: 5, name: "Chowmein", emoji: "/food 4.png" },
+    { id: 6, name: "Steak", emoji: "/food 5.png" },
   ];
 
   const visibleItems = 6;
@@ -78,7 +78,7 @@ export default function SearchByFood() {
             >
               {/* Circular Image */}
               <div className="w-32 h-32 rounded-full bg-gray-300 flex items-center justify-center text-6xl overflow-hidden shadow-md group-hover:shadow-lg transition-shadow">
-                {food.emoji}
+                <Image src={food.emoji} alt={food.name} width={128} height={128} />
               </div>
 
               {/* Food Name */}

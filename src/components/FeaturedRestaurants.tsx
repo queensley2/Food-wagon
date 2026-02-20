@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 interface Restaurant {
   id: number;
@@ -18,7 +19,7 @@ export default function FeaturedRestaurants() {
   const restaurants: Restaurant[] = [
     {
       id: 1,
-      image: "🍜",
+      image: "/restuarant 1.png",
       discount: 20,
       fastDelivery: true,
       name: "Foodworld",
@@ -29,7 +30,7 @@ export default function FeaturedRestaurants() {
     },
     {
       id: 2,
-      image: "🥗",
+      image: "/restuarant 2.png",
       discount: 15,
       fastDelivery: true,
       name: "Pizzahub",
@@ -40,7 +41,7 @@ export default function FeaturedRestaurants() {
     },
     {
       id: 3,
-      image: "🥞",
+      image: "/restuarant 3.png",
       discount: 19,
       fastDelivery: true,
       name: "Donuts hut",
@@ -51,7 +52,7 @@ export default function FeaturedRestaurants() {
     },
     {
       id: 4,
-      image: "🧁",
+      image: "/restuarant 4.png",
       discount: 15,
       fastDelivery: true,
       name: "Donuts hut",
@@ -62,7 +63,7 @@ export default function FeaturedRestaurants() {
     },
     {
       id: 5,
-      image: "🥩",
+      image: "/restuarant 5.png",
       discount: 10,
       fastDelivery: true,
       name: "Ruby Tuesday",
@@ -73,7 +74,7 @@ export default function FeaturedRestaurants() {
     },
     {
       id: 6,
-      image: "🍗",
+      image: "/restuarant 6.png",
       discount: 25,
       fastDelivery: true,
       name: "Makofa Fried Chicken",
@@ -84,7 +85,7 @@ export default function FeaturedRestaurants() {
     },
     {
       id: 7,
-      image: "🍲",
+      image: "/restuarant 7.png",
       discount: 10,
       fastDelivery: true,
       name: "Red Square",
@@ -95,7 +96,7 @@ export default function FeaturedRestaurants() {
     },
     {
       id: 8,
-      image: "🌮",
+      image: "/restuarant 8.png",
       discount: 10,
       fastDelivery: true,
       name: "Taco Bell",
@@ -122,8 +123,15 @@ export default function FeaturedRestaurants() {
               className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
             >
               {/* Image Container with Badges */}
-              <div className="relative w-full h-48 bg-gray-300 flex items-center justify-center text-5xl overflow-hidden">
-                {restaurant.image}
+              <div className="relative w-full h-48 bg-gray-300 overflow-hidden">
+                <Image
+                  src={restaurant.image}
+                  alt={restaurant.name}
+                  width={300}
+                  height={200}
+                  className="w-full h-full object-cover"
+                  priority={false}
+                />
 
                 {/* Discount Badge */}
                 <div className="absolute top-3 left-3 bg-orange-500 text-white font-bold rounded px-2 py-1 text-sm shadow-md flex items-center gap-1">
