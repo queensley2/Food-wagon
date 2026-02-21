@@ -92,11 +92,11 @@ export default function DiscountSection() {
       <div className="max-w-7xl mx-auto">
         {/* Grid of Discount Cards */}
         <div className="grid grid-cols-4 gap-6">
-          {discounts.map((card) => (
+          {discounts.map((card, index) => (
             <div
               key={card.id}
               onClick={() => setSelectedCard(card)}
-              className="bg-white rounded-lg overflow-hidden border border-dashed border-blue-400 shadow-md hover:shadow-lg transition-shadow cursor-pointer hover:scale-105 duration-200"
+              className={`bg-white rounded-lg overflow-hidden border border-dashed border-blue-400 shadow-md hover:shadow-lg transition-shadow cursor-pointer hover:scale-105 duration-200 animate-slide-up hover-lift stagger-${index + 1}`}
             >
               {/* Image Container with Discount Badge */}
               <div className="relative w-full h-48 bg-gray-200 overflow-hidden">

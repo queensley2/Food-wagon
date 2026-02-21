@@ -42,18 +42,23 @@ export default function HowItWorks() {
     <div className="bg-orange-50 py-16 px-20">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <h2 className="text-4xl font-bold text-center text-orange-500 mb-16">
+        <h2 className="text-4xl font-bold text-center text-orange-500 mb-16 animate-slide-down">
           How does it work
         </h2>
 
         {/* Steps Grid */}
         <div className="grid grid-cols-4 gap-8">
-          {steps.map((step) => (
-            <div key={step.id} className="text-center">
+          {steps.map((step, index) => (
+            <div
+              key={step.id}
+              className={`text-center animate-slide-up hover-lift stagger-${index + 1}`}
+            >
               {/* Icon Circle */}
               <div className="flex justify-center mb-6">
-                <div className="bg-yellow-400 rounded-full w-24 h-24 flex items-center justify-center shadow-lg">
-                  <span className="text-5xl">{step.icon}</span>
+                <div className="bg-yellow-400 rounded-full w-24 h-24 flex items-center justify-center shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-110">
+                  <span className="text-5xl animate-bounce-slow">
+                    {step.icon}
+                  </span>
                 </div>
               </div>
 

@@ -218,10 +218,8 @@ export default function Footer() {
 
           {/* Bottom Info */}
           <div className="flex items-center justify-between text-gray-400 text-xs border-t border-gray-700 pt-6">
-            <div>All rights reserved © Your Company 2021</div>
-            <div className="flex items-center gap-1">
-              Made with ❤️ by Themesbag
-            </div>
+            <div>All rights reserved © Queensley 2026</div>
+            
           </div>
         </div>
       </footer>

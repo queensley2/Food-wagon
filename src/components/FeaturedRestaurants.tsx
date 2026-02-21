@@ -28,9 +28,12 @@ interface Restaurant {
 }
 
 export default function FeaturedRestaurants() {
-  const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
+  const [selectedRestaurant, setSelectedRestaurant] =
+    useState<Restaurant | null>(null);
   const [showRestaurantModal, setShowRestaurantModal] = useState(false);
-  const [selectedMenuItem, setSelectedMenuItem] = useState<MenuItem | null>(null);
+  const [selectedMenuItem, setSelectedMenuItem] = useState<MenuItem | null>(
+    null,
+  );
   const [showCheckout, setShowCheckout] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [deliveryAddress, setDeliveryAddress] = useState("");
@@ -50,9 +53,30 @@ export default function FeaturedRestaurants() {
       cuisineType: "Multi-Cuisine",
       deliveryTime: "30-45 mins",
       menus: [
-        { id: 1, name: "Grilled Chicken Pasta", description: "Tender grilled chicken with fresh pasta and herbs", price: 12.99, icon: "🍝", rating: 4.6 },
-        { id: 2, name: "Beef Steak", description: "Premium beef steak with seasonal vegetables", price: 18.99, icon: "🥩", rating: 4.8 },
-        { id: 3, name: "Vegetable Risotto", description: "Creamy risotto with fresh vegetables", price: 10.99, icon: "🍚", rating: 4.4 },
+        {
+          id: 1,
+          name: "Grilled Chicken Pasta",
+          description: "Tender grilled chicken with fresh pasta and herbs",
+          price: 12.99,
+          icon: "🍝",
+          rating: 4.6,
+        },
+        {
+          id: 2,
+          name: "Beef Steak",
+          description: "Premium beef steak with seasonal vegetables",
+          price: 18.99,
+          icon: "🥩",
+          rating: 4.8,
+        },
+        {
+          id: 3,
+          name: "Vegetable Risotto",
+          description: "Creamy risotto with fresh vegetables",
+          price: 10.99,
+          icon: "🍚",
+          rating: 4.4,
+        },
       ],
     },
     {
@@ -68,9 +92,30 @@ export default function FeaturedRestaurants() {
       cuisineType: "Italian",
       deliveryTime: "25-40 mins",
       menus: [
-        { id: 1, name: "Margherita Pizza", description: "Fresh mozzarella, tomato, and basil", price: 11.99, icon: "🍕", rating: 4.7 },
-        { id: 2, name: "Pepperoni Pizza", description: "Classic pepperoni with cheese", price: 13.99, icon: "🍕", rating: 4.8 },
-        { id: 3, name: "Garlic Bread", description: "Crispy garlic bread with herbs", price: 5.99, icon: "🥖", rating: 4.5 },
+        {
+          id: 1,
+          name: "Margherita Pizza",
+          description: "Fresh mozzarella, tomato, and basil",
+          price: 11.99,
+          icon: "🍕",
+          rating: 4.7,
+        },
+        {
+          id: 2,
+          name: "Pepperoni Pizza",
+          description: "Classic pepperoni with cheese",
+          price: 13.99,
+          icon: "🍕",
+          rating: 4.8,
+        },
+        {
+          id: 3,
+          name: "Garlic Bread",
+          description: "Crispy garlic bread with herbs",
+          price: 5.99,
+          icon: "🥖",
+          rating: 4.5,
+        },
       ],
     },
     {
@@ -86,9 +131,30 @@ export default function FeaturedRestaurants() {
       cuisineType: "Bakery",
       deliveryTime: "15-30 mins",
       menus: [
-        { id: 1, name: "Glazed Donut", description: "Classic glazed donut", price: 2.99, icon: "🍩", rating: 4.6 },
-        { id: 2, name: "Chocolate Donut", description: "Rich chocolate donut with sprinkles", price: 3.49, icon: "🍩", rating: 4.7 },
-        { id: 3, name: "Donut Box (6pc)", description: "Mix of 6 delicious donuts", price: 15.99, icon: "📦", rating: 4.8 },
+        {
+          id: 1,
+          name: "Glazed Donut",
+          description: "Classic glazed donut",
+          price: 2.99,
+          icon: "🍩",
+          rating: 4.6,
+        },
+        {
+          id: 2,
+          name: "Chocolate Donut",
+          description: "Rich chocolate donut with sprinkles",
+          price: 3.49,
+          icon: "🍩",
+          rating: 4.7,
+        },
+        {
+          id: 3,
+          name: "Donut Box (6pc)",
+          description: "Mix of 6 delicious donuts",
+          price: 15.99,
+          icon: "📦",
+          rating: 4.8,
+        },
       ],
     },
     {
@@ -104,9 +170,30 @@ export default function FeaturedRestaurants() {
       cuisineType: "Bakery",
       deliveryTime: "15-30 mins",
       menus: [
-        { id: 1, name: "Glazed Donut", description: "Classic glazed donut", price: 2.99, icon: "🍩", rating: 4.6 },
-        { id: 2, name: "Chocolate Donut", description: "Rich chocolate donut", price: 3.49, icon: "🍩", rating: 4.7 },
-        { id: 3, name: "Coffee", description: "Fresh brewed coffee", price: 2.49, icon: "☕", rating: 4.5 },
+        {
+          id: 1,
+          name: "Glazed Donut",
+          description: "Classic glazed donut",
+          price: 2.99,
+          icon: "🍩",
+          rating: 4.6,
+        },
+        {
+          id: 2,
+          name: "Chocolate Donut",
+          description: "Rich chocolate donut",
+          price: 3.49,
+          icon: "🍩",
+          rating: 4.7,
+        },
+        {
+          id: 3,
+          name: "Coffee",
+          description: "Fresh brewed coffee",
+          price: 2.49,
+          icon: "☕",
+          rating: 4.5,
+        },
       ],
     },
     {
@@ -122,9 +209,30 @@ export default function FeaturedRestaurants() {
       cuisineType: "American",
       deliveryTime: "35-50 mins",
       menus: [
-        { id: 1, name: "BBQ Ribs", description: "Slow-cooked BBQ ribs", price: 16.99, icon: "🍖", rating: 4.7 },
-        { id: 2, name: "Grilled Salmon", description: "Fresh grilled salmon with lemon", price: 17.99, icon: "🐟", rating: 4.8 },
-        { id: 3, name: "Hamburger", description: "Classic hamburger with fries", price: 9.99, icon: "🍔", rating: 4.5 },
+        {
+          id: 1,
+          name: "BBQ Ribs",
+          description: "Slow-cooked BBQ ribs",
+          price: 16.99,
+          icon: "🍖",
+          rating: 4.7,
+        },
+        {
+          id: 2,
+          name: "Grilled Salmon",
+          description: "Fresh grilled salmon with lemon",
+          price: 17.99,
+          icon: "🐟",
+          rating: 4.8,
+        },
+        {
+          id: 3,
+          name: "Hamburger",
+          description: "Classic hamburger with fries",
+          price: 9.99,
+          icon: "🍔",
+          rating: 4.5,
+        },
       ],
     },
     {
@@ -140,9 +248,30 @@ export default function FeaturedRestaurants() {
       cuisineType: "Fried Chicken",
       deliveryTime: "20-35 mins",
       menus: [
-        { id: 1, name: "Fried Chicken Combo", description: "2 pieces chicken with fries", price: 9.99, icon: "🍗", rating: 4.8 },
-        { id: 2, name: "Spicy Wings", description: "Hot and spicy chicken wings", price: 7.99, icon: "🔥", rating: 4.6 },
-        { id: 3, name: "Chicken Burger", description: "Crispy chicken burger with sauce", price: 8.99, icon: "🍔", rating: 4.7 },
+        {
+          id: 1,
+          name: "Fried Chicken Combo",
+          description: "2 pieces chicken with fries",
+          price: 9.99,
+          icon: "🍗",
+          rating: 4.8,
+        },
+        {
+          id: 2,
+          name: "Spicy Wings",
+          description: "Hot and spicy chicken wings",
+          price: 7.99,
+          icon: "🔥",
+          rating: 4.6,
+        },
+        {
+          id: 3,
+          name: "Chicken Burger",
+          description: "Crispy chicken burger with sauce",
+          price: 8.99,
+          icon: "🍔",
+          rating: 4.7,
+        },
       ],
     },
     {
@@ -158,9 +287,30 @@ export default function FeaturedRestaurants() {
       cuisineType: "Indian",
       deliveryTime: "30-45 mins",
       menus: [
-        { id: 1, name: "Butter Chicken", description: "Creamy tomato-based chicken curry", price: 13.99, icon: "🍛", rating: 4.7 },
-        { id: 2, name: "Biryani", description: "Fragrant rice dish with spices", price: 11.99, icon: "🍚", rating: 4.8 },
-        { id: 3, name: "Naan Bread", description: "Soft Indian bread", price: 3.99, icon: "🥖", rating: 4.5 },
+        {
+          id: 1,
+          name: "Butter Chicken",
+          description: "Creamy tomato-based chicken curry",
+          price: 13.99,
+          icon: "🍛",
+          rating: 4.7,
+        },
+        {
+          id: 2,
+          name: "Biryani",
+          description: "Fragrant rice dish with spices",
+          price: 11.99,
+          icon: "🍚",
+          rating: 4.8,
+        },
+        {
+          id: 3,
+          name: "Naan Bread",
+          description: "Soft Indian bread",
+          price: 3.99,
+          icon: "🥖",
+          rating: 4.5,
+        },
       ],
     },
     {
@@ -176,9 +326,30 @@ export default function FeaturedRestaurants() {
       cuisineType: "Mexican",
       deliveryTime: "25-40 mins",
       menus: [
-        { id: 1, name: "Crunchy Taco", description: "Crispy taco with beef and cheese", price: 1.99, icon: "🌮", rating: 4.6 },
-        { id: 2, name: "Quesadilla", description: "Grilled tortilla with filling", price: 5.99, icon: "🥙", rating: 4.7 },
-        { id: 3, name: "Burrito Supreme", description: "Large burrito with all toppings", price: 8.99, icon: "🌯", rating: 4.8 },
+        {
+          id: 1,
+          name: "Crunchy Taco",
+          description: "Crispy taco with beef and cheese",
+          price: 1.99,
+          icon: "🌮",
+          rating: 4.6,
+        },
+        {
+          id: 2,
+          name: "Quesadilla",
+          description: "Grilled tortilla with filling",
+          price: 5.99,
+          icon: "🥙",
+          rating: 4.7,
+        },
+        {
+          id: 3,
+          name: "Burrito Supreme",
+          description: "Large burrito with all toppings",
+          price: 8.99,
+          icon: "🌯",
+          rating: 4.8,
+        },
       ],
     },
   ];
@@ -204,20 +375,20 @@ export default function FeaturedRestaurants() {
     <div className="bg-white py-16 px-20">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12 animate-slide-down">
           Featured Restaurants
         </h2>
 
         {/* Grid of Restaurants */}
         <div className="grid grid-cols-4 gap-6 mb-12">
-          {restaurants.map((restaurant) => (
+          {restaurants.map((restaurant, index) => (
             <div
               key={restaurant.id}
               onClick={() => {
                 setSelectedRestaurant(restaurant);
                 setShowRestaurantModal(true);
               }}
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer hover:scale-105 duration-200"
+              className={`bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer hover:scale-105 duration-200 animate-slide-up hover-glow stagger-${index + 1}`}
             >
               {/* Image Container with Badges */}
               <div className="relative w-full h-48 bg-gray-300 overflow-hidden">
@@ -305,13 +476,19 @@ export default function FeaturedRestaurants() {
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 text-white">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h2 className="text-3xl font-bold">{selectedRestaurant.name}</h2>
-                    <p className="text-lg mt-2">{selectedRestaurant.cuisineType}</p>
+                    <h2 className="text-3xl font-bold">
+                      {selectedRestaurant.name}
+                    </h2>
+                    <p className="text-lg mt-2">
+                      {selectedRestaurant.cuisineType}
+                    </p>
                   </div>
                   <div className="text-right">
                     <div className="flex items-center gap-2 mb-2">
                       <span className="text-2xl">⭐</span>
-                      <span className="text-2xl font-bold">{selectedRestaurant.rating}</span>
+                      <span className="text-2xl font-bold">
+                        {selectedRestaurant.rating}
+                      </span>
                     </div>
                     <p className="text-sm">{selectedRestaurant.deliveryTime}</p>
                   </div>
@@ -325,16 +502,22 @@ export default function FeaturedRestaurants() {
               <div className="flex items-center gap-6 mb-8 pb-8 border-b border-gray-200">
                 <div className="flex items-center gap-2">
                   <span className="text-2xl">{selectedRestaurant.logo}</span>
-                  <span className="text-gray-700 font-semibold">{selectedRestaurant.name}</span>
+                  <span className="text-gray-700 font-semibold">
+                    {selectedRestaurant.name}
+                  </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-xl">🏷️</span>
-                  <span className="font-bold text-orange-500">{selectedRestaurant.discount}% OFF</span>
+                  <span className="font-bold text-orange-500">
+                    {selectedRestaurant.discount}% OFF
+                  </span>
                 </div>
                 {selectedRestaurant.fastDelivery && (
                   <div className="flex items-center gap-2">
                     <span className="text-xl">⚡</span>
-                    <span className="text-gray-700 font-semibold">Fast Delivery</span>
+                    <span className="text-gray-700 font-semibold">
+                      Fast Delivery
+                    </span>
                   </div>
                 )}
               </div>
@@ -381,11 +564,11 @@ export default function FeaturedRestaurants() {
                     </div>
                   ))}
                 </div>
-                    </div>
-                  </div>
-                </div>
               </div>
-            )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Checkout Modal */}
       {showCheckout && selectedMenuItem && selectedRestaurant && (
@@ -428,7 +611,9 @@ export default function FeaturedRestaurants() {
 
                 {/* Quantity */}
                 <div className="flex items-center gap-4">
-                  <label className="text-gray-700 font-semibold">Quantity:</label>
+                  <label className="text-gray-700 font-semibold">
+                    Quantity:
+                  </label>
                   <div className="flex items-center border border-gray-300 rounded-lg">
                     <button
                       onClick={() => setQuantity(Math.max(1, quantity - 1))}
@@ -515,10 +700,7 @@ export default function FeaturedRestaurants() {
               <div className="mb-6 space-y-2">
                 <div className="flex justify-between text-gray-700">
                   <span>Subtotal ({quantity}x):</span>
-                  <span>
-                    $
-                    {(selectedMenuItem.price * quantity).toFixed(2)}
-                  </span>
+                  <span>${(selectedMenuItem.price * quantity).toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-gray-700">
                   <span>Delivery Fee:</span>
@@ -576,6 +758,6 @@ export default function FeaturedRestaurants() {
           </div>
         </div>
       )}
-          </div>
-        )}
-      
+    </div>
+  );
+}

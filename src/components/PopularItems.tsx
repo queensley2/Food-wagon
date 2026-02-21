@@ -183,10 +183,10 @@ export default function PopularItems() {
 
           {/* Items Grid */}
           <div className="flex justify-center gap-6 overflow-hidden flex-1">
-            {itemsToShow.map((item) => (
+            {itemsToShow.map((item, index) => (
               <div
                 key={item.id}
-                className="flex-shrink-0 w-40 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                className={`flex-shrink-0 w-40 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow animate-scale-in hover-lift stagger-${index + 1}`}
               >
                 {/* Image Container */}
                 <div className="relative w-full h-40 bg-gray-200 overflow-hidden">
