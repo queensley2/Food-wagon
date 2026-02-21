@@ -68,7 +68,7 @@ export default function Hero() {
           {/* Right Image */}
           <div className="flex justify-center">
             <Image
-              src="/hero-image.png"
+              src="/hero-Image.png"
               alt="Hero Image"
               width={600}
               height={500}
