@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <div>
       {/* CTA Section */}
-      <div className="bg-yellow-400 py-16 px-6 relative overflow-hidden">
+      <div className="bg-yellow-400 py-16 px-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-8">
           {/* Left - Food Images */}
           <div className="flex-shrink-0 relative w-1/3 h-48">

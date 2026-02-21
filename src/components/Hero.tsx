@@ -7,7 +7,7 @@ export default function Hero() {
   const [activeTab, setActiveTab] = useState("delivery");
 
   return (
-    <div className="bg-gradient-to-l from-[#FF9F00] to-[#FFB800] pt-16 px-6">
+    <div className="bg-gradient-to-l from-[#FF9F00] to-[#FFB800] pt-16 px-20">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 gap-8 items-center">
           {/* Left Content */}

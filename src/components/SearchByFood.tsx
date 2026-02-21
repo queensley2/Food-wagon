@@ -39,7 +39,7 @@ export default function SearchByFood() {
   };
 
   return (
-    <div className="bg-blue-50 py-16 px-6 border-t-4 border-blue-400">
+    <div className="bg-blue-50 py-16 px-20">
       <div className="max-w-7xl mx-auto">
         {/* Header with Title and Controls */}
         <div className="flex items-center justify-between mb-12">

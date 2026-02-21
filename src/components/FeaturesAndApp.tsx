@@ -29,7 +29,7 @@ export default function FeaturesAndApp() {
   ];
 
   return (
-    <div className="bg-yellow-100 py-16 px-6">
+    <div className="bg-yellow-100 py-16 px-20">
       <div className="max-w-7xl mx-auto">
         {/* Features Section */}
         <div className="bg-white rounded-3xl shadow-lg p-8 mb-16 max-w-2xl mx-auto">

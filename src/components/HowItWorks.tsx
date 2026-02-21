@@ -39,7 +39,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <div className="bg-orange-50 py-16 px-6">
+    <div className="bg-orange-50 py-16 px-20">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <h2 className="text-4xl font-bold text-center text-orange-500 mb-16">
