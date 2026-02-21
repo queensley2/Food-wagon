@@ -15,7 +15,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Food Wagon - Your Ultimate Food Delivery App",
-  description: "Order from your favorite restaurants and enjoy delicious meals delivered to your doorstep. Fast, reliable, and packed with features to satisfy your cravings.",
+  description:
+    "Order from your favorite restaurants and enjoy delicious meals delivered to your doorstep. Fast, reliable, and packed with features to satisfy your cravings.",
+  icons: {
+    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🍔</text></svg>",
+  },
 };
 
 export default function RootLayout({
