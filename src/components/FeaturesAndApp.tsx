@@ -29,21 +29,23 @@ export default function FeaturesAndApp() {
   ];
 
   return (
-    <div className="bg-yellow-100 py-16 px-20">
+    <div className="bg-yellow-100 py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-20">
       <div className="max-w-7xl mx-auto">
         {/* Features Section */}
-        <div className="bg-white rounded-3xl shadow-lg p-8 mb-16 max-w-2xl mx-auto">
-          <div className="grid grid-cols-3 gap-8">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-lg p-4 sm:p-6 md:p-8 mb-8 sm:mb-12 md:mb-16 max-w-2xl mx-auto">
+          <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {features.map((feature) => (
               <div
                 key={feature.id}
                 className="flex flex-col items-center text-center"
               >
                 {/* Icon */}
-                <div className="text-5xl mb-4">{feature.icon}</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl mb-2 sm:mb-4">
+                  {feature.icon}
+                </div>
 
                 {/* Title */}
-                <h3 className="text-orange-500 font-bold text-lg">
+                <h3 className="text-orange-500 font-bold text-xs sm:text-sm md:text-lg">
                   {feature.title}
                 </h3>
               </div>
@@ -52,7 +54,7 @@ export default function FeaturesAndApp() {
         </div>
 
         {/* App Installation Section */}
-        <div className="grid grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
           {/* Left: Phone Mock-up */}
           <div className="flex justify-center">
             <div className="relative">
@@ -144,17 +146,17 @@ export default function FeaturesAndApp() {
 
           {/* Right: App Installation Info */}
           <div>
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">
               Install the app
             </h2>
 
-            <p className="text-gray-600 mb-8 leading-relaxed">
+            <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
               It&apos;s never been easier to order food. Look for the finest
               discounts and you&apos;ll be lost in a world of delectable food.
             </p>
 
             {/* App Store Buttons */}
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               {/* Google Play Button */}
               <a
                 href="#"

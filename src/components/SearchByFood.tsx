@@ -39,16 +39,18 @@ export default function SearchByFood() {
   };
 
   return (
-    <div className="bg-blue-50 py-16 px-20">
+    <div className="bg-blue-50 py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-20">
       <div className="max-w-7xl mx-auto">
         {/* Header with Title and Controls */}
-        <div className="flex items-center justify-between mb-12">
-          <h2 className="text-3xl font-bold text-gray-800">Search by Food</h2>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
+            Search by Food
+          </h2>
 
           <div className="flex items-center gap-4">
             <a
               href="#"
-              className="text-orange-500 font-semibold hover:underline"
+              className="text-orange-500 font-semibold hover:underline transition-all duration-300"
             >
               View all &gt;
             </a>
@@ -56,13 +58,13 @@ export default function SearchByFood() {
             {/* Navigation Arrows */}
             <button
               onClick={handlePrev}
-              className="bg-yellow-400 hover:bg-yellow-500 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors"
+              className="bg-yellow-400 hover:bg-yellow-500 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors hover-scale"
             >
               ❮
             </button>
             <button
               onClick={handleNext}
-              className="bg-yellow-400 hover:bg-yellow-500 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors"
+              className="bg-yellow-400 hover:bg-yellow-500 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors hover-scale"
             >
               ❯
             </button>
@@ -70,19 +72,25 @@ export default function SearchByFood() {
         </div>
 
         {/* Food Categories Grid */}
-        <div className="grid grid-cols-6 gap-8">
-          {itemsToShow.map((food) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-6 md:gap-8">
+          {itemsToShow.map((food, index) => (
             <div
               key={food.id}
-              className="flex flex-col items-center gap-4 cursor-pointer group"
+              className={`flex flex-col items-center gap-2 sm:gap-4 cursor-pointer group animate-slide-up hover-lift stagger-${index + 1}`}
             >
               {/* Circular Image */}
-              <div className="w-32 h-32 rounded-full bg-gray-300 flex items-center justify-center text-6xl overflow-hidden shadow-md group-hover:shadow-lg transition-shadow">
-                <Image src={food.emoji} alt={food.name} width={128} height={128} />
+              <div className="w-20 sm:w-24 md:w-32 h-20 sm:h-24 md:h-32 rounded-full bg-gray-300 flex items-center justify-center text-4xl sm:text-5xl md:text-6xl overflow-hidden shadow-md group-hover:shadow-lg transition-shadow">
+                <Image
+                  src={food.emoji}
+                  alt={food.name}
+                  width={128}
+                  height={128}
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Food Name */}
-              <h3 className="text-gray-800 font-semibold text-center group-hover:text-orange-500 transition-colors">
+              <h3 className="text-gray-800 font-semibold text-center text-xs sm:text-sm md:text-base group-hover:text-orange-500 transition-colors">
                 {food.name}
               </h3>
             </div>

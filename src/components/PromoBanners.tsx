@@ -81,32 +81,32 @@ export default function PromoBanners() {
 
   return (
     <>
-      <div className="bg-white py-12 px-20">
+      <div className="bg-white py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-20">
         <div className="max-w-6xl mx-auto">
           {/* Container with blue border */}
-          <div className=" rounded-lg p-8 space-y-6">
+          <div className="rounded-lg p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-6">
             {/* Top Promo - Best Deals */}
-            <div className="grid grid-cols-2 gap-8 items-center bg-white animate-slide-up">
-              <div className="pr-8 border-r-4 border-dotted border-blue-300 animate-slide-left stagger-1">
-                <h2 className="text-2xl font-bold mb-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center bg-white animate-slide-up">
+              <div className="pr-0 md:pr-8 border-r-0 md:border-r-4 border-dotted border-blue-300 animate-slide-left stagger-1 order-2 md:order-1">
+                <h2 className="text-xl sm:text-2xl font-bold mb-2">
                   <span className="text-gray-800">Best deals</span>
                   <span className="text-orange-500 ml-2">
                     crispy sandwiches
                   </span>
                 </h2>
-                <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+                <p className="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed">
                   Enjoy the finest gourmet experience with our exclusive
                   sandwiches. Crafted with the freshest ingredients and
                   signature sauces.
                 </p>
                 <button
                   onClick={() => handleOrderNow(promos[0])}
-                  className="bg-yellow-400 hover:bg-yellow-500 text-white font-bold px-6 py-2 rounded transition-colors"
+                  className="bg-yellow-400 hover:bg-yellow-500 text-white font-bold px-4 sm:px-6 py-1 sm:py-2 rounded transition-colors text-xs sm:text-sm"
                 >
                   Order Now
                 </button>
               </div>
-              <div className="flex justify-center text-8xl rounded-lg p-8 animate-slide-right stagger-2 hover-lift">
+              <div className="flex justify-center text-6xl sm:text-7xl md:text-8xl rounded-lg p-4 sm:p-6 md:p-8 animate-slide-right stagger-2 hover-lift order-1 md:order-2">
                 <Image
                   src="/sandwish2.png"
                   alt="Sandwich"
@@ -118,8 +118,8 @@ export default function PromoBanners() {
             </div>
 
             {/* Middle Promo - Fried Chicken */}
-            <div className="grid grid-cols-2 gap-8 items-center bg-white animate-slide-up stagger-2">
-              <div className="flex justify-center text-8xl  rounded-lg p-8 animate-slide-left stagger-3 hover-lift">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center bg-white animate-slide-up stagger-2">
+              <div className="flex justify-center text-6xl sm:text-7xl md:text-8xl rounded-lg p-4 sm:p-6 md:p-8 animate-slide-left stagger-3 hover-lift order-2 md:order-1">
                 <Image
                   src="/chicken.png"
                   alt="Chicken"
@@ -128,18 +128,18 @@ export default function PromoBanners() {
                   className="transition-transform duration-300 hover:scale-105"
                 />
               </div>
-              <div className="pl-8 border-l-4 border-dotted border-blue-300">
-                <h2 className="text-2xl font-bold mb-2">
+              <div className="pl-0 md:pl-8 border-l-0 md:border-l-4 border-dotted border-blue-300 order-1 md:order-2">
+                <h2 className="text-xl sm:text-2xl font-bold mb-2">
                   <span className="text-gray-800">Celebrate parties with</span>
                   <span className="text-orange-500 ml-2">fried chicken</span>
                 </h2>
-                <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+                <p className="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed">
                   Indulge in our deliciously crispy fried chicken, perfect for
                   any celebration. Order in bulk and get special discounts!
                 </p>
                 <button
                   onClick={() => handleOrderNow(promos[1])}
-                  className="bg-yellow-400 hover:bg-yellow-500 text-white font-bold px-6 py-2 rounded transition-colors hover-scale"
+                  className="bg-yellow-400 hover:bg-yellow-500 text-white font-bold px-4 sm:px-6 py-1 sm:py-2 rounded transition-colors hover-scale text-xs sm:text-sm"
                 >
                   Order Now
                 </button>
@@ -147,25 +147,31 @@ export default function PromoBanners() {
             </div>
 
             {/* Bottom Promo - Pizza */}
-            <div className="grid grid-cols-2 gap-8 items-center bg-white animate-slide-up stagger-4">
-              <div className="pr-8 border-r-4 border-dotted border-blue-300 animate-slide-left stagger-5">
-                <h2 className="text-2xl font-bold mb-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center bg-white animate-slide-up stagger-4">
+              <div className="pr-0 md:pr-8 border-r-0 md:border-r-4 border-dotted border-blue-300 animate-slide-left stagger-5 order-2 md:order-1">
+                <h2 className="text-xl sm:text-2xl font-bold mb-2">
                   <span className="text-gray-800">Wanna eat hot & spicy</span>
                   <span className="text-orange-500 ml-2">pizza</span>
                 </h2>
-                <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+                <p className="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed">
                   Our mouth-watering spicy pizza will leave you craving for
                   more. Made with fresh ingredients and special spices.
                 </p>
                 <button
                   onClick={() => handleOrderNow(promos[2])}
-                  className="bg-yellow-400 hover:bg-yellow-500 text-white font-bold px-6 py-2 rounded transition-colors"
+                  className="bg-yellow-400 hover:bg-yellow-500 text-white font-bold px-4 sm:px-6 py-1 sm:py-2 rounded transition-colors text-xs sm:text-sm"
                 >
                   Order Now
                 </button>
               </div>
-              <div className="flex justify-center text-8xl  rounded-lg p-8">
-                <Image src="/food.png" alt="Pizza" width={961} height={412} />
+              <div className="flex justify-center text-6xl sm:text-7xl md:text-8xl rounded-lg p-4 sm:p-6 md:p-8 order-1 md:order-2">
+                <Image
+                  src="/food.png"
+                  alt="Pizza"
+                  width={961}
+                  height={412}
+                  className="w-full h-auto"
+                />
               </div>
             </div>
           </div>

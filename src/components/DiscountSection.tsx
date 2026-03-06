@@ -88,10 +88,10 @@ export default function DiscountSection() {
   };
 
   return (
-    <div className="bg-white py-12 px-20">
+    <div className="bg-white py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-20">
       <div className="max-w-7xl mx-auto">
         {/* Grid of Discount Cards */}
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {discounts.map((card, index) => (
             <div
               key={card.id}
@@ -136,10 +136,10 @@ export default function DiscountSection() {
       {/* Modal Popup */}
       {selectedCard && (
         <div className="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg max-w-2xl w-full shadow-2xl overflow-hidden">
-            <div className="grid grid-cols-2 gap-6 p-6">
+          <div className="bg-white rounded-lg max-w-2xl w-full shadow-2xl overflow-y-auto max-h-screen">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 p-4 sm:p-6">
               {/* Image Section */}
-              <div className="relative h-80 bg-gray-200 rounded-lg overflow-hidden">
+              <div className="relative h-64 sm:h-80 bg-gray-200 rounded-lg overflow-hidden">
                 <Image
                   src={selectedCard.image}
                   alt={selectedCard.foodName ?? "Food image"}
@@ -147,58 +147,60 @@ export default function DiscountSection() {
                   className="object-cover"
                 />
                 {/* Discount Badge */}
-                <div className="absolute top-4 left-4 bg-yellow-400 text-white font-bold rounded px-4 py-2 text-xl shadow-md">
+                <div className="absolute top-4 left-4 bg-yellow-400 text-white font-bold rounded px-4 py-2 text-lg sm:text-xl shadow-md">
                   {selectedCard.discount}%
                 </div>
               </div>
 
               {/* Details Section */}
-              <div className="flex flex-col justify-between">
+              <div className="flex flex-col justify-between relative">
                 {/* Close Button */}
                 <button
                   onClick={() => setSelectedCard(null)}
-                  className="absolute top-4 right-4 bg-red-500 hover:bg-gray-300 rounded-full w-10 h-10 flex items-center justify-center text-2xl transition-colors"
+                  className="absolute top-0 right-0 bg-red-500 hover:bg-gray-300 rounded-full w-10 h-10 flex items-center justify-center text-2xl transition-colors"
                 >
                   ×
                 </button>
 
                 {/* Food Details */}
-                <div>
-                  <h2 className="text-3xl font-bold text-gray-800 mb-2">
+                <div className="mt-8 md:mt-0">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">
                     {selectedCard.foodName}
                   </h2>
-                  <p className="text-orange-500 font-semibold text-lg mb-4">
+                  <p className="text-orange-500 font-semibold text-base sm:text-lg mb-4">
                     {selectedCard.restaurant}
                   </p>
 
                   {/* Rating */}
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="text-yellow-400 text-xl">⭐</span>
-                    <span className="text-gray-700 font-semibold">
+                    <span className="text-yellow-400 text-lg sm:text-xl">
+                      ⭐
+                    </span>
+                    <span className="text-gray-700 font-semibold text-sm sm:text-base">
                       {selectedCard.rating} / 5
                     </span>
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-6">
                     {selectedCard.description}
                   </p>
 
                   {/* Price */}
-                  <div className="flex items-baseline gap-2 mb-6">
-                    <span className="text-gray-500 line-through text-sm">
+                  <div className="flex items-baseline gap-2 mb-6 flex-wrap">
+                    <span className="text-gray-500 line-through text-xs sm:text-sm">
                       ${(selectedCard.price! * 1.2).toFixed(2)}
                     </span>
-                    <span className="text-3xl font-bold text-gray-800">
+                    <span className="text-2xl sm:text-3xl font-bold text-gray-800">
                       ${selectedCard.price}
                     </span>
-                    <span className="text-green-600 font-semibold text-sm">
+                    <span className="text-green-600 font-semibold text-xs sm:text-sm">
                       Save {selectedCard.discount}%
                     </span>
                   </div>
 
                   {/* Days Remaining */}
-                  <p className="text-orange-500 font-semibold mb-6">
+                  <p className="text-orange-500 font-semibold mb-6 text-sm sm:text-base">
                     ⏰ {selectedCard.daysRemaining} Days Remaining
                   </p>
                 </div>
@@ -206,7 +208,7 @@ export default function DiscountSection() {
                 {/* Order Now Button */}
                 <button
                   onClick={() => handleOrderNow(selectedCard)}
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-lg transition-colors text-lg"
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 sm:py-3 rounded-lg transition-colors text-base sm:text-lg"
                 >
                   Order Now
                 </button>
@@ -220,8 +222,8 @@ export default function DiscountSection() {
       {showCheckout && selectedCard && (
         <div className="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto shadow-2xl">
-            <div className="bg-orange-500 text-white p-6 flex items-center justify-between sticky top-0 z-10">
-              <h2 className="text-2xl font-bold">Checkout</h2>
+            <div className="bg-orange-500 text-white p-4 sm:p-6 flex items-center justify-between sticky top-0 z-10">
+              <h2 className="text-xl sm:text-2xl font-bold">Checkout</h2>
               <button
                 onClick={() => setShowCheckout(false)}
                 className="bg-orange-600 hover:bg-orange-700 rounded-full w-10 h-10 flex items-center justify-center text-2xl transition-colors"
@@ -230,29 +232,29 @@ export default function DiscountSection() {
               </button>
             </div>
 
-            <div className="p-8">
+            <div className="p-4 sm:p-8">
               {/* Order Summary */}
               <div className="mb-6 pb-6 border-b border-gray-200">
-                <h3 className="text-lg font-bold text-gray-800 mb-4">
+                <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-4">
                   Order Summary
                 </h3>
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-2">
                   <div className="flex-1">
                     <p className="font-semibold text-gray-800">
                       {selectedCard.foodName}
                     </p>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-xs sm:text-sm text-gray-600">
                       {selectedCard.restaurant}
                     </p>
                   </div>
-                  <p className="text-lg font-bold text-gray-800">
+                  <p className="text-base sm:text-lg font-bold text-gray-800">
                     ${selectedCard.price}
                   </p>
                 </div>
 
                 {/* Quantity */}
-                <div className="flex items-center gap-4">
-                  <label className="text-gray-700 font-semibold">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
+                  <label className="text-gray-700 font-semibold text-sm sm:text-base">
                     Quantity:
                   </label>
                   <div className="flex items-center border border-gray-300 rounded-lg">

@@ -164,32 +164,32 @@ export default function PopularItems() {
   };
 
   return (
-    <div className="bg-white py-16 px-20">
+    <div className="bg-white py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-20">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-8 sm:mb-12">
           Popular items
         </h2>
 
         {/* Carousel Container */}
-        <div className="relative flex items-center gap-4">
+        <div className="relative flex items-center gap-2 sm:gap-4">
           {/* Left Arrow */}
           <button
             onClick={handlePrev}
-            className="absolute -left-6 z-10 bg-yellow-400 hover:bg-yellow-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl transition-colors"
+            className="hidden sm:flex absolute -left-4 sm:-left-6 z-10 bg-yellow-400 hover:bg-yellow-500 text-white rounded-full w-10 sm:w-12 h-10 sm:h-12 flex-shrink-0 items-center justify-center text-lg sm:text-xl transition-colors"
           >
             ❮
           </button>
 
           {/* Items Grid */}
-          <div className="flex justify-center gap-6 overflow-hidden flex-1">
+          <div className="flex justify-center gap-3 sm:gap-6 overflow-x-auto flex-1 pb-2">
             {itemsToShow.map((item, index) => (
               <div
                 key={item.id}
-                className={`flex-shrink-0 w-40 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow animate-scale-in hover-lift stagger-${index + 1}`}
+                className={`flex-shrink-0 w-32 sm:w-40 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow animate-scale-in hover-lift stagger-${index + 1}`}
               >
                 {/* Image Container */}
-                <div className="relative w-full h-40 bg-gray-200 overflow-hidden">
+                <div className="relative w-full h-32 sm:h-40 bg-gray-200 overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.name}
@@ -199,20 +199,20 @@ export default function PopularItems() {
                 </div>
 
                 {/* Content */}
-                <div className="p-4">
+                <div className="p-2 sm:p-4">
                   {/* Name */}
-                  <h3 className="text-gray-800 font-semibold text-sm mb-1">
+                  <h3 className="text-gray-800 font-semibold text-xs sm:text-sm mb-1 truncate">
                     {item.name}
                   </h3>
 
                   {/* Restaurant */}
-                  <p className="text-orange-500 text-xs mb-3 flex items-center gap-1">
+                  <p className="text-orange-500 text-xs mb-2 sm:mb-3 flex items-center gap-1 truncate">
                     <span>⭐</span>
-                    {item.restaurant}
+                    <span className="truncate">{item.restaurant}</span>
                   </p>
 
                   {/* Price */}
-                  <p className="text-gray-800 font-bold text-lg mb-3">
+                  <p className="text-gray-800 font-bold text-base sm:text-lg mb-2 sm:mb-3">
                     ${item.price.toFixed(2)}
                   </p>
 
@@ -231,7 +231,7 @@ export default function PopularItems() {
           {/* Right Arrow */}
           <button
             onClick={handleNext}
-            className="absolute -right-6 z-10 bg-yellow-400 hover:bg-yellow-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl transition-colors"
+            className="hidden sm:flex absolute -right-4 sm:-right-6 z-10 bg-yellow-400 hover:bg-yellow-500 text-white rounded-full w-10 sm:w-12 h-10 sm:h-12 flex-shrink-0 items-center justify-center text-lg sm:text-xl transition-colors"
           >
             ❯
           </button>
@@ -242,8 +242,8 @@ export default function PopularItems() {
       {showCheckout && selectedItem && (
         <div className="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto shadow-2xl">
-            <div className="bg-orange-500 text-white p-6 flex items-center justify-between sticky top-0 z-10">
-              <h2 className="text-2xl font-bold">Checkout</h2>
+            <div className="bg-orange-500 text-white p-4 sm:p-6 flex items-center justify-between sticky top-0 z-10">
+              <h2 className="text-xl sm:text-2xl font-bold">Checkout</h2>
               <button
                 onClick={() => setShowCheckout(false)}
                 className="bg-orange-600 hover:bg-orange-700 rounded-full w-10 h-10 flex items-center justify-center text-2xl transition-colors"

@@ -372,15 +372,15 @@ export default function FeaturedRestaurants() {
   };
 
   return (
-    <div className="bg-white py-16 px-20">
+    <div className="bg-white py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-20">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12 animate-slide-down">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-8 sm:mb-12 animate-slide-down">
           Featured Restaurants
         </h2>
 
         {/* Grid of Restaurants */}
-        <div className="grid grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {restaurants.map((restaurant, index) => (
             <div
               key={restaurant.id}
